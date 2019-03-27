@@ -1,7 +1,6 @@
 <template>
   <div>
     <header>
-      <h1>Header</h1>
     </header>
   </div>
 </template>
@@ -13,4 +12,11 @@ export default {
 </script>
 
 <style scoped>
+header {
+  background-image: url('../../assets/img/united.gif');
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 </style>
