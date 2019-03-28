@@ -1,6 +1,8 @@
 <template>
   <div>
 
+    <Navbar/>
+
     <!-- Header area -->
     <div class='about_header'>
       <h1 class='center'>About Me</h1>
@@ -57,7 +59,12 @@
 </template>
 
 <script>
+import Navbar from '@/components/support/Navbar';
+
 export default {
+  components: {
+    Navbar,
+  }
 };
 </script>
 

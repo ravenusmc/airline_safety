@@ -14,7 +14,7 @@ export default {
 <style scoped>
 header {
   background-image: url('../../assets/img/united.gif');
-  height: 500px;
+  height: 300px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
