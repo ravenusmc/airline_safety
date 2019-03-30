@@ -25,7 +25,7 @@ export default {
 
 header {
   background-image: url('../../assets/img/united.gif');
-  height: 450px;
+  height: 400px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

@@ -1,6 +1,9 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
 
+#Importing code that I wrote
+from data import *
+
 # configuration
 DEBUG = True
 
@@ -12,8 +15,8 @@ app.config.from_object(__name__)
 CORS(app)
 
 # sanity check route
-@app.route('/ping', methods=['GET'])
-def ping_pong():
+@app.route('/incidents_per_year', methods=['GET'])
+def incidents_per_year():
     return jsonify('pong!')
 
 if __name__ == '__main__':
