@@ -34,13 +34,12 @@ export default {
 main {
   display: grid;
   grid-template-columns: 15% 85%;
-  border: 2px solid yellow;
-  height: 600px;
+  min-height: 100vh;
 }
 
 .navbar_div {
   height: 100%;
-  background: #28566c;
+  background: #003268;
   display: flex;
   flex-direction: column;
   justify-content: center;

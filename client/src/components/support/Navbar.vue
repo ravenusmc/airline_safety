@@ -28,14 +28,14 @@ ul {
 }
 
 a {
-  color: black;
+  color: #E3132C;
   font-size: 30px;
   text-decoration: none;
   line-height: 30px;
 }
 
 a:hover {
-  color: white;
+  color: #9B1631;
   text-decoration: none;
 }
 

@@ -3,15 +3,17 @@
     <section>
 
       <form @submit="submitChoice">
-        <h5>Select an Airline:</h5>
-        <select v-model="airline" name="airline">
-          <option v-for="airline in airlines" :value="airline">{{airline}}</option>
-        </select>
-        <h5>Select an Incident Type</h5>
-        <select v-model="incident" name="incident">
-          <option v-for="incident in incidents" :value="incident">{{incident}}</option>
-        </select>
-        <button type="submit">Submit</button>
+        <div class='form_div'>
+          <h5>Airline:</h5>
+          <select v-model="airline" name="airline">
+            <option v-for="airline in airlines" :value="airline">{{airline}}</option>
+          </select>
+          <h5>Incident Type</h5>
+          <select v-model="incident" name="incident">
+            <option v-for="incident in incidents" :value="incident">{{incident}}</option>
+          </select>
+          <button type="submit">Submit</button>
+        </div>
       </form>
 
     </section>
@@ -45,11 +47,24 @@ export default {
   methods: {
     submitChoice(evt) {
       evt.preventDefault();
-      
+
     },
   },
 }
 </script>
 
 <style scoped>
+form {
+  margin-top: 50px;
+}
+.form_div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+select {
+  margin: 10px;
+}
 </style>
