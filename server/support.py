@@ -9,8 +9,9 @@ class Support():
     def __init__(self):
         self.data = pd.read_csv('./data/airline_data.csv')
 
-    def test(self):
-        print(self.data.head())
-        
+    def get_unique_airlines(self):
+        unique = self.data.airline.unique()
+        print(unique)
+
 obj = Support()
-obj.test()
+obj.get_unique_airlines()
