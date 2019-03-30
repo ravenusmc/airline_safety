@@ -1,22 +1,17 @@
 <template>
-  <div>
-      <nav class="navbar navbar-expand-lg navbar-custom navbar-static-top">
-        <button class="navbar-toggler" type="button" data-toggle="collapse"
-        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <router-link class="nav-link" to="/">Home</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/About">About</router-link>
-            </li>
-          </ul>
-        </div>
-      </nav>
+  <div class='navbar_div'>
+
+    <navbar>
+      <ul>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/">Home</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/About">About</router-link>
+        </li>
+      </ul>
+    </navbar>
+
   </div>
 </template>
 
@@ -25,24 +20,23 @@ export default {
 };
 </script>
 
-<style>
-/* change the background color */
-.navbar-custom {
-    background-color: #28566c;
+<style scoped>
+
+ul {
+  list-style-type: none;
+  color: black;
 }
-/* change the brand and text color */
-.navbar-custom .navbar-brand,
-.navbar-custom .navbar-text {
-    color: rgba(255,255,255,.8);
+
+a {
+  color: black;
+  font-size: 30px;
+  text-decoration: none;
+  line-height: 30px;
 }
-/* change the link color */
-.navbar-custom .navbar-nav .nav-link {
-    color: rgba(255,255,255,.5);
+
+a:hover {
+  color: white;
+  text-decoration: none;
 }
-/* change the color of active or hovered links */
-.navbar-custom .nav-item.active .nav-link,
-.navbar-custom .nav-item:focus .nav-link,
-.navbar-custom .nav-item:hover .nav-link {
-    color: #ffffff;
-}
+
 </style>

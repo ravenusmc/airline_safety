@@ -3,7 +3,7 @@
     <main>
 
       <div>
-        <navbar></navbar>
+        <Navbar/>
       </div>
 
       <div>
@@ -31,5 +31,13 @@ export default {
 main {
   display: grid;
   grid-template-columns: 15% 85%;
+}
+
+.navbar_div {
+  height: 100%;
+  background: #28566c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 </style>
