@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import Navbar from '@/components/support/Navbar';
+import Navbar from '@/components/about/Navbar';
 
 export default {
   components: {
