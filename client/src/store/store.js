@@ -1,29 +1,46 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
+import jsonp from 'jsonp';
 
 Vue.use(Vuex);
 
-const state = {
-};
-
-const getters = {
-
-};
-
-const actions = {
-
-};
-
-const mutations = {
-
-};
-
 export const store = new Vuex.Store({
-  modules: {
-    state,
-    getters,
-    actions,
-    mutations,
-  }
-});
+
+  state: {
+    graphOneData: {},
+  },
+
+  getters: {
+    graphOneData: state => state.graphOneData,
+  },
+
+  actions: {
+
+    fetchGraphOneData: ({ commit }, payload) => {
+      const path = 'http://localhost:5000/incidents_per_year';
+      axios.post(path, payload)
+      .then((res) => {
+        //commit('setCrimeData', res.data)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    },
+  },
+
+  mutations: {
+  },
+
+})
+
+// export const store = new Vuex.Store({
+//   modules: {
+//     state,
+//     getters,
+//     actions,
+//     mutations,
+//   }
+// });
+
+// })

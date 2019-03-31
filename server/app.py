@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 
 #Importing code that I wrote
@@ -15,8 +15,11 @@ app.config.from_object(__name__)
 CORS(app)
 
 # sanity check route
-@app.route('/incidents_per_year', methods=['GET'])
+@app.route('/incidents_per_year', methods=['GET', 'POST'])
 def incidents_per_year():
+    if request.method == 'POST':
+        post_data = request.get_json()
+        print(post_data)
     return jsonify('pong!')
 
 if __name__ == '__main__':

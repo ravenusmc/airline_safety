@@ -21,6 +21,9 @@
 </template>
 
 <script>
+import * as d3 from 'd3';
+import { mapActions } from 'vuex';
+
 export default {
   name: 'GraphOne',
   data(){
@@ -40,15 +43,25 @@ export default {
       'TACA', 'TAM', 'TAP - Air Portugal', 'Thai Airways', 'Turkish Airlines',
       'United / Continental*', 'US Airways / America West*', 'Vietnam Airlines',
       'Virgin Atlantic', 'Xiamen Airlines'],
-      incident: 'An Incident',
-      incidents: ['An Incident','fatal_accidents','fatalities'],
+      incident: 'incidents',
+      incidents: ['incidents','fatal_accidents','fatalities'],
     }
   },
   methods: {
+    ...mapActions([
+      'fetchGraphOneData',
+    ]),
     submitChoice(evt) {
       evt.preventDefault();
-
+      const graphOneData = {
+        airline: this.airline,
+        incident: this.incident,
+      };
+      this.fetchGraphOneData(graphOneData);
     },
+  },
+  mounted() {
+
   },
 }
 </script>
