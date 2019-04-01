@@ -16,6 +16,13 @@
         </div>
       </form>
 
+      <section id='graphOne'>
+        <svg
+        :height='height'
+        :width='width'>
+        </svg>
+      </section>
+
     </section>
   </div>
 </template>
@@ -45,6 +52,8 @@ export default {
       'Virgin Atlantic', 'Xiamen Airlines'],
       incident: 'incidents',
       incidents: ['incidents','fatal_accidents','fatalities'],
+      height: 600,
+      width: 600,
     }
   },
   methods: {
@@ -79,5 +88,12 @@ form {
 
 select {
   margin: 10px;
+}
+
+#graphOne {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 </style>
