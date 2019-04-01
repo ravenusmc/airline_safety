@@ -21,7 +21,7 @@ export const store = new Vuex.Store({
       const path = 'http://localhost:5000/incidents_per_year';
       axios.post(path, payload)
       .then((res) => {
-        //commit('setCrimeData', res.data)
+        //commit('setGraphOneData', res.data)
       })
       .catch((error) => {
         console.log(error);
@@ -30,17 +30,9 @@ export const store = new Vuex.Store({
   },
 
   mutations: {
+    setGraphOneData(state, data) {
+      state.graphOneData = data;
+    },
   },
 
 })
-
-// export const store = new Vuex.Store({
-//   modules: {
-//     state,
-//     getters,
-//     actions,
-//     mutations,
-//   }
-// });
-
-// })

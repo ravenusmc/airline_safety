@@ -18,9 +18,12 @@ CORS(app)
 @app.route('/incidents_per_year', methods=['GET', 'POST'])
 def incidents_per_year():
     if request.method == 'POST':
+        data = Data()
         post_data = request.get_json()
-        print(post_data)
-    return jsonify('pong!')
+        print(post_data['airline'])
+        #graphOneData = data.graphOneData(airline)
+        # return jsonify(graphOneData)
+        return jsonify('Hi')
 
 if __name__ == '__main__':
     app.run()
