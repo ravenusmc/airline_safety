@@ -54,6 +54,7 @@ export default {
       incidents: ['incidents','fatal_accidents','fatalities'],
       height: 600,
       width: 600,
+      xAxisLabels: ['incidents', 'fatal', 'fatalities'],
     }
   },
   methods: {
@@ -95,5 +96,6 @@ select {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 2px solid red;
 }
 </style>
