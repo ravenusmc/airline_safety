@@ -8,7 +8,7 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
 
   state: {
-    graphOneData: {},
+    graphOneData: [],
   },
 
   getters: {
@@ -21,8 +21,8 @@ export const store = new Vuex.Store({
       const path = 'http://localhost:5000/incidents_per_year';
       axios.post(path, payload)
       .then((res) => {
-        console.log(res.data)
-        //commit('setGraphOneData', res.data)
+        //console.log(res.data)
+        commit('setGraphOneData', res.data)
       })
       .catch((error) => {
         console.log(error);

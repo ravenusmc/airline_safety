@@ -4,8 +4,11 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import { store } from './store/store';
+import Chart from 'v-chart-plugin'
 
 Vue.config.productionTip = false;
+
+Vue.use(Chart);
 
 /* eslint-disable no-new */
 new Vue({
