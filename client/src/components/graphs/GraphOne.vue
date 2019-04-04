@@ -75,17 +75,6 @@ export default {
         //   width: 50
         // },
       },
-      // barChartData: {
-      //   chartType: "barChart",
-      //   selector: "barChart",
-      //   title: "Airline Accidents",
-      //   width: 600,
-      //   height: 500,
-      //   // metric: ["total", "forecast"],
-      //   dim: "month",
-      //   //data: [76, 14, 128],
-      //   label: true
-      // },
     }
   },
   computed: {
@@ -93,28 +82,30 @@ export default {
       'graphOneData',
     ]),
     test() {
+      return this.vBarChartData.data = this.graphOneData;
+    }
+  },
+  watch: {
+    vBarChartData: function (newData, oldData) {
       this.vBarChartData.data = this.graphOneData;
+      this.debouncedGetAnswer()
     }
   },
   methods: {
     ...mapActions([
       'fetchGraphOneData',
     ]),
+    newData(){
+      this.vBarChartData.data = this.graphOneData;
+    },
     submitChoice(evt) {
       evt.preventDefault();
       const graphOneData = {
         airline: this.airline,
         incident: this.incident,
       };
-      const promise = new Promise((resolve,reject) => {
-        this.fetchGraphOneData(graphOneData);
-      })
-      promise.then((resolve) => {
-        console.log(this.$store.getters.graphOneData)
-      })
-      //this.fetchGraphOneData(graphOneData);
-
-
+      this.fetchGraphOneData(graphOneData);
+      this.newData();
     },
   },
   mounted() {
