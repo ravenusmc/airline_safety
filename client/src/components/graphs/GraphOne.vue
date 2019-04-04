@@ -12,20 +12,13 @@
           <select v-model="incident" name="incident">
             <option v-for="incident in incidents" :value="incident">{{incident}}</option>
           </select>
-          <button type="submit">Submit{{graphOneData}}</button>
+          <button type="submit">Submit</button>
         </div>
       </form>
 
-      <section id='graphOne'>
-        <v-chart v-bind:chartData="test"></v-chart>
+      <section v-if='showGraphOne' id='graphOne'>
+        <v-chart v-bind:chartData="adjustData"></v-chart>
       </section>
-
-      <!-- <section id='graphOne'>
-        <svg
-        :height='height'
-        :width='width'>
-        </svg>
-      </section> -->
 
     </section>
   </div>
@@ -61,23 +54,14 @@ export default {
       width: 600,
       xAxisLabels: ['incidents', 'fatal', 'fatalities'],
       vBarChartData: {},
-      // vBarChartData: {
-      //   chartType: "vBarChart",
-      //   selector: "vChart",
-      //   title: "Airline Accidents",
-      //   width: 600,
-      //   height: 500,
-      //   //metric: ["total", "forecast"],
-      //   dim: "month",
-      //   data: [76, 14, 128],
-      // },
+      showGraphOne: false,
     }
   },
   computed: {
     ...mapGetters([
       'graphOneData',
     ]),
-    test() {
+    adjustData() {
       return this.vBarChartData = {
         chartType: "vBarChart",
         selector: "vChart",
@@ -88,39 +72,20 @@ export default {
         dim: "month",
         data: this.graphOneData,
       }
-      //return this.vBarChartData.data = this.graphOneData;
     },
-  },
-  watch: {
-    vBarChartData: function (newData, oldData) {
-      this.vBarChartData.data = this.graphOneData;
-      this.debouncedGetAnswer()
-    }
   },
   methods: {
     ...mapActions([
       'fetchGraphOneData',
     ]),
-    newData(){
-      this.vBarChartData = this.vBarChartData.data = this.graphOneData;
-    },
     submitChoice(evt) {
       evt.preventDefault();
       const graphOneData = {
         airline: this.airline,
         incident: this.incident,
       };
+      this.showGraphOne = true
       this.fetchGraphOneData(graphOneData);
-      this.newDaa
-      // const promise = new Promise((resolve,reject) => {
-      //   this.fetchGraphOneData(graphOneData);
-      // })
-      // promise.then((resolve) => {
-      //   console.log(this.$store.getters.graphOneData)
-      // })
-      //this.fetchGraphOneData(graphOneData);
-
-
     },
   },
   mounted() {
