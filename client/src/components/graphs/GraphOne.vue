@@ -17,7 +17,7 @@
       </form>
 
       <section id='graphOne'>
-        <v-chart v-bind:chartData="vBarChartData"></v-chart>
+        <v-chart v-bind:chartData="test"></v-chart>
       </section>
 
       <!-- <section id='graphOne'>
@@ -60,21 +60,17 @@ export default {
       height: 600,
       width: 600,
       xAxisLabels: ['incidents', 'fatal', 'fatalities'],
-      vBarChartData: {
-        chartType: "vBarChart",
-        selector: "vChart",
-        title: "Airline Accidents",
-        width: 600,
-        height: 500,
-        //metric: ["total", "forecast"],
-        dim: "month",
-        data: [76, 14, 128],
-        // legends: {
-        //   enabled: true,
-        //   height: 25,
-        //   width: 50
-        // },
-      },
+      vBarChartData: {},
+      // vBarChartData: {
+      //   chartType: "vBarChart",
+      //   selector: "vChart",
+      //   title: "Airline Accidents",
+      //   width: 600,
+      //   height: 500,
+      //   //metric: ["total", "forecast"],
+      //   dim: "month",
+      //   data: [76, 14, 128],
+      // },
     }
   },
   computed: {
@@ -82,8 +78,18 @@ export default {
       'graphOneData',
     ]),
     test() {
-      return this.vBarChartData.data = this.graphOneData;
-    }
+      return this.vBarChartData = {
+        chartType: "vBarChart",
+        selector: "vChart",
+        title: "Airline Accidents",
+        width: 600,
+        height: 500,
+        //metric: ["total", "forecast"],
+        dim: "month",
+        data: this.graphOneData,
+      }
+      //return this.vBarChartData.data = this.graphOneData;
+    },
   },
   watch: {
     vBarChartData: function (newData, oldData) {
@@ -96,7 +102,7 @@ export default {
       'fetchGraphOneData',
     ]),
     newData(){
-      this.vBarChartData.data = this.graphOneData;
+      this.vBarChartData = this.vBarChartData.data = this.graphOneData;
     },
     submitChoice(evt) {
       evt.preventDefault();
@@ -105,7 +111,16 @@ export default {
         incident: this.incident,
       };
       this.fetchGraphOneData(graphOneData);
-      this.newData();
+      this.newDaa
+      // const promise = new Promise((resolve,reject) => {
+      //   this.fetchGraphOneData(graphOneData);
+      // })
+      // promise.then((resolve) => {
+      //   console.log(this.$store.getters.graphOneData)
+      // })
+      //this.fetchGraphOneData(graphOneData);
+
+
     },
   },
   mounted() {

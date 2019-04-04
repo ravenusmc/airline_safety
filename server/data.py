@@ -20,10 +20,7 @@ class Data():
         fatalities = int(self.data[4]) #This gets me the fatalities column
         #This list will hold all of thee data
         graphOneData = [incidents, fatal, fatalities]
-        data = [{'incidents': incidents}]
-
-
-
+        #data = [{'incidents': incidents, 'fatal': fatal, 'fatalities': fatalities}]
         return graphOneData
 
 
