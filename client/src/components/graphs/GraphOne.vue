@@ -53,7 +53,7 @@ export default {
       height: 600,
       width: 600,
       xAxisLabels: ['incidents', 'fatal', 'fatalities'],
-      vBarChartData: {},
+      vBarChartData: [],
       showGraphOne: false,
     }
   },
@@ -64,13 +64,21 @@ export default {
     adjustData() {
       return this.vBarChartData = {
         chartType: "vBarChart",
+        label: true,
+        fill: 'blue',
         selector: "vChart",
         title: "Airline Accidents",
-        width: 600,
+        subtitle: "Number of Incidents",
+        width: 500,
         height: 500,
-        //metric: ["total", "forecast"],
-        dim: "month",
+        metric: ["count"],
+        dim: "name",
         data: this.graphOneData,
+        legends: {
+          enabled: true,
+          height: 5,
+          width: 50
+        },
       }
     },
   },
