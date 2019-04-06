@@ -1,18 +1,23 @@
 <template>
   <div>
+
+    <div>
+      <h5 class='font center'>Section One: Examining Airline Incidents by Airline</h5>
+    </div>
+
     <section>
 
       <form @submit="submitChoice">
         <div class='form_div'>
-          <h5>Airline:</h5>
+          <h5 class='font'>Airline:</h5>
           <select v-model="airline" name="airline">
             <option v-for="airline in airlines" :value="airline">{{airline}}</option>
           </select>
-          <h5>Incident Type</h5>
+          <h5 class='font'>Year Group</h5>
           <select v-model="year" name="incident">
             <option v-for="year in years" :value="year">{{year}}</option>
           </select>
-          <button type="submit">Submit</button>
+          <button class='font' type="submit">Submit</button>
         </div>
       </form>
 
@@ -48,7 +53,7 @@ export default {
       'TACA', 'TAM', 'TAP - Air Portugal', 'Thai Airways', 'Turkish Airlines',
       'United / Continental*', 'US Airways / America West*', 'Vietnam Airlines',
       'Virgin Atlantic', 'Xiamen Airlines'],
-      year: 'year',
+      year: '85-99',
       years: ['85-99','00-14'],
       height: 600,
       width: 600,
@@ -106,6 +111,15 @@ export default {
 form {
   margin-top: 50px;
 }
+
+.center {
+  text-align: center;
+}
+
+.font {
+  font-family: 'Roboto Mono', monospace;
+}
+
 .form_div {
   display: flex;
   flex-direction: row;

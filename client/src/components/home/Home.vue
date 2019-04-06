@@ -8,6 +8,7 @@
 
       <div>
         <Header/>
+        <sectionOne/>
         <GraphOne/>
       </div>
 
@@ -17,6 +18,7 @@
 
 <script>
 import Header from '@/components/home/Header';
+import sectionOne from '@/components/home/SectionOne';
 import Navbar from '@/components/support/Navbar';
 import GraphOne from '@/components/graphs/GraphOne';
 
@@ -26,6 +28,7 @@ export default {
     Header,
     Navbar,
     GraphOne,
+    sectionOne,
   }
 }
 </script>

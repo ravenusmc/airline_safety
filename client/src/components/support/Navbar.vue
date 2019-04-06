@@ -4,10 +4,10 @@
     <navbar>
       <ul>
         <li class="nav-item">
-          <router-link class="nav-link" to="/">Home</router-link>
+          <router-link class="font nav-link" to="/">HOME</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/About">About</router-link>
+          <router-link class="font nav-link" to="/About">ABOUT</router-link>
         </li>
       </ul>
     </navbar>
@@ -21,6 +21,10 @@ export default {
 </script>
 
 <style scoped>
+
+.font {
+  font-family: 'Roboto Mono', monospace;
+}
 
 ul {
   list-style-type: none;
