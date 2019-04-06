@@ -17,13 +17,16 @@
           <select v-model="year" name="incident">
             <option v-for="year in years" :value="year">{{year}}</option>
           </select>
-          <button class='font' type="submit">Submit</button>
-          <button @submit="hideChart" class='font'>Hide Chart</button>
+          <button class="waves-effect waves-light btn-small font" type="submit">Submit</button>
         </div>
       </form>
 
+      <div class='hide_button_div'>
+        <button @click="hideChart" class='waves-effect waves-light btn-small font'>Hide Chart</button>
+      </div>
+
       <section v-if='showGraphOne' id='graphOne'>
-        <v-chart v-bind:chartData="adjustData"></v-chart>
+        <v-chart :chartData="adjustData"></v-chart>
       </section>
 
     </section>
@@ -101,9 +104,9 @@ export default {
       this.showGraphOne = true
       this.fetchGraphOneData(graphOneData);
     },
-  },
-  mounted() {
-
+    hideChart(){
+      this.showGraphOne = false;
+    },
   },
 }
 </script>
@@ -130,6 +133,14 @@ form {
 
 select {
   margin: 10px;
+}
+
+.hide_button_div {
+  text-align: center;
+}
+
+button {
+  margin-left: 10px;
 }
 
 #graphOne {

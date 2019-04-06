@@ -3,7 +3,7 @@
 
     <footer>
       <div class='footer_fix'>
-        <h5>Copyright &copy; 2019 Mike Cuddy Productions<br></h5>
+        <h5 class='font'>Copyright &copy; 2019 Mike Cuddy Productions<br></h5>
           <div>
             <a href="https://www.linkedin.com/in/mcuddy1/"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
             <a href="https://twitter.com/mcuddy7"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
@@ -22,6 +22,9 @@ export default {
 </script>
 
 <style>
+.font {
+  font-family: 'Roboto Mono', monospace;
+}
 footer {
   height: 200px;
   background-color: #003268;
