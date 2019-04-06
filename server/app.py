@@ -21,10 +21,9 @@ def incidents_per_year():
         data = Data()
         post_data = request.get_json()
         airline = post_data['airline']
-        graphOneData = data.graphOneData(airline)
-        print(graphOneData)
+        year = post_data['year']
+        graphOneData = data.graphOneData(airline, year)
         return jsonify(graphOneData)
-        #return jsonify('Hi')
 
 if __name__ == '__main__':
     app.run()

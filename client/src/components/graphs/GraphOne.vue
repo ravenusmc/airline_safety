@@ -9,8 +9,8 @@
             <option v-for="airline in airlines" :value="airline">{{airline}}</option>
           </select>
           <h5>Incident Type</h5>
-          <select v-model="incident" name="incident">
-            <option v-for="incident in incidents" :value="incident">{{incident}}</option>
+          <select v-model="year" name="incident">
+            <option v-for="year in years" :value="year">{{year}}</option>
           </select>
           <button type="submit">Submit</button>
         </div>
@@ -48,8 +48,8 @@ export default {
       'TACA', 'TAM', 'TAP - Air Portugal', 'Thai Airways', 'Turkish Airlines',
       'United / Continental*', 'US Airways / America West*', 'Vietnam Airlines',
       'Virgin Atlantic', 'Xiamen Airlines'],
-      incident: 'incidents',
-      incidents: ['incidents','fatal_accidents','fatalities'],
+      year: 'year',
+      years: ['85-99','00-14'],
       height: 600,
       width: 600,
       xAxisLabels: ['incidents', 'fatal', 'fatalities'],
@@ -90,7 +90,7 @@ export default {
       evt.preventDefault();
       const graphOneData = {
         airline: this.airline,
-        incident: this.incident,
+        year: this.year,
       };
       this.showGraphOne = true
       this.fetchGraphOneData(graphOneData);
