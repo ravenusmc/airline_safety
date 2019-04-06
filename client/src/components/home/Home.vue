@@ -6,11 +6,11 @@
         <Navbar/>
       </div>
 
-      <div>
+      <div class='content_area'>
         <Header/>
         <sectionOne/>
         <GraphOne/>
-        <GraphTwo/>
+        <!-- <GraphTwo/> -->
       </div>
 
     </main>
@@ -49,6 +49,16 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.content_area {
+  margin-bottom: 50px;
+}
+
+@media only all and (max-width: 968px){
+  main {
+    grid-template-columns: 1fr;
+  }
 }
 
 </style>

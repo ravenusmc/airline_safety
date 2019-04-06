@@ -7,22 +7,23 @@
 
     <section>
 
+
       <form @submit="submitChoice">
         <div class='form_div'>
           <h5 class='font'>Airline:</h5>
           <select v-model="airline" name="airline">
             <option v-for="airline in airlines" :value="airline">{{airline}}</option>
           </select>
-          <h5 class='font'>Year Group</h5>
+          <h5 class='font'>Year Group:</h5>
           <select v-model="year" name="incident">
             <option v-for="year in years" :value="year">{{year}}</option>
           </select>
-          <button class="waves-effect waves-light btn-small font" type="submit">Submit</button>
+          <button class="btn btn-primary font" type="submit">Submit</button>
         </div>
       </form>
 
       <div class='hide_button_div'>
-        <button @click="hideChart" class='waves-effect waves-light btn-small font'>Hide Chart</button>
+        <button @click="hideChart" class='btn btn-primary font'>Hide Chart</button>
       </div>
 
       <section v-if='showGraphOne' id='graphOne'>
@@ -148,5 +149,14 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@media only all and (max-width: 768px){
+
+  .form_div {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
 }
 </style>
