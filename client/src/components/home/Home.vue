@@ -10,6 +10,7 @@
         <Header/>
         <sectionOne/>
         <GraphOne/>
+        <GraphTwo/>
       </div>
 
     </main>
@@ -21,14 +22,16 @@ import Header from '@/components/home/Header';
 import sectionOne from '@/components/home/SectionOne';
 import Navbar from '@/components/support/Navbar';
 import GraphOne from '@/components/graphs/GraphOne';
+import GraphTwo from '@/components/graphs/GraphTwo';
 
 export default {
   name: 'Home',
   components: {
     Header,
     Navbar,
-    GraphOne,
     sectionOne,
+    GraphOne,
+    GraphTwo,
   }
 }
 </script>

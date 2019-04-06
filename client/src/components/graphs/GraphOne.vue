@@ -18,6 +18,7 @@
             <option v-for="year in years" :value="year">{{year}}</option>
           </select>
           <button class='font' type="submit">Submit</button>
+          <button @submit="hideChart" class='font'>Hide Chart</button>
         </div>
       </form>
 
